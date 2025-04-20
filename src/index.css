@@ -8,6 +8,7 @@
   --color-forestdeep-950: oklch(26.6% 0.065 152.934);
   --color-forestlight-900: oklch(39.3% 0.095 152.535);
   --color-subtlegreen-100: oklch(96.2% 0.044 156.743);
+  --color-lightgreen-50: oklch(98.2% 0.018 155.826);
   --color-offwhite-50: oklch(98.7% 0.022 95.277);
 
   /* fonts */
@@ -26,7 +27,7 @@
 }
 /* fonts */
 .headline_text {
-  @apply text-2xl font-bold lg:text-3xl;
+  @apply text-2xl font-bold md:text-3xl lg:text-4xl;
 }
 .header_text {
   @apply text-lg font-bold lg:text-xl;

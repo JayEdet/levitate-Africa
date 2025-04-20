@@ -17,10 +17,11 @@ import ivory from "/ivory.jpg";
 import planting from "/planting trees.png";
 import heroSvg from "/hero pattern.png";
 import biodiversity from "/biodiversity.jpg";
+import grivetMonkey from "/grivet monkey.jpg";
 import deadElephant from "/dead-elephant.jpeg";
 
 /* videos */
-import heroVideo from "/herovideo.mp4";
+import heroVideo from "/hero video.mp4";
 
 /* swiper images */
 import lonelyElephant from "/lonely elephant.jpg";
@@ -81,7 +82,25 @@ export default function Landingpage() {
     lion,
   ];
   /* project images */
-  const projects = [childPlanting, techNovation, outreach];
+  const projects = [
+    {
+      image: childPlanting,
+      heading: "Afforestation",
+      writeup:
+        "teaching and practicing afforestation is at the core of what we do",
+    },
+    {
+      image: techNovation,
+      heading: "Tech trainings",
+      writeup: "we conduct trainings for Tech enthusiasts",
+    },
+    {
+      image: outreach,
+      heading: "Say no to drugs",
+      writeup:
+        "We carry out regular outreach programs to sensitize young people about the dangers of drug abuse",
+    },
+  ];
 
   /* goals svg and text */
   const goals = [
@@ -117,7 +136,7 @@ export default function Landingpage() {
         {/* Video */}
         <video
           className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ease-in-out ${
-            showVideo ? "opacity-100 z-10" : "opacity-0"
+            showVideo ? "opacity-100 z-0" : "opacity-0"
           }`}
           autoPlay
           muted
@@ -128,7 +147,7 @@ export default function Landingpage() {
         </video>
       </div>
       <div className="overlay absolute inset-0 w-full left-0 h-full p-4 flex flex-col justify-center lg:px-16 ">
-        <h1 className="hero font-headline z-20 font-bold  text-offwhite-50 text-[32px] lg:text-[48px] lg:w-6/12">
+        <h1 className="hero relative font-headline sm:z-20 font-bold  text-offwhite-50 text-[32px] lg:text-[48px] lg:w-6/12">
           Africa's voice for wildlife
         </h1>
       </div>
@@ -301,51 +320,28 @@ export default function Landingpage() {
           </p>
         </div>
       </div>
-      {/* sub initiative programs */}
-      <div className="my-8 px-4 space-x-2 lg:flex lg:px-16">
-        {/* youths */}
-        <div className="w-full lg:w-10/12 ">
-          <h3 className="text font-bold text-forestlight-900 capitalize lg:headline_text">
-            Green generation movement
-          </h3>
-          <p>
-            <span className="italic font-bold">
-              Levitate Africa foundation{" "}
-            </span>
-            partner with other organizations to empower and promote healthy
-            living amongst young people.
-          </p>
-          {/* project */}
-          <div className="lg:flex space-x-2">
-            {projects.map((projectImg, index) => (
-              <div
-                className=" overflow-hidden h-full my-8 bg-green-300 "
-                key={index}
-              >
-                <img
-                  src={projectImg}
-                  className="w-full h-48 object-cover block"
-                  alt="say no to drugs, sensitize young ones about drugs"
-                />
-              </div>
-            ))}
-          </div>
-          {/* see more */}
-          <button className="bg-forestlight-900 text-soillight-200 hover:bg-forestdeep-950 transition duration-300 ">
-            See more projects
-          </button>
+      {/* support  */}
+      <div className="p-0 md:flex md:px-16">
+        <div className="w-full h-full overflow-hidden md:w-6/12 ">
+          <img
+            src={lonelyElephant}
+            className="w-full h-full hover:scale-110 transition duration-300"
+            alt="grivet monkey"
+          />
         </div>
-        {/* articles */}
-        <div className="w-2/12">
-          <h3 className="text-center text-soildeep-950 font-bold">Articles</h3>
+        <div className="p-4 md:w-6/12">
+          <h3 className="mt-16">
+            Help levitate Africa protect elephants and other vulnerable species
+            in the world.
+          </h3>
         </div>
       </div>
       {/* Goals */}
-      <div className=" px-4 py-16 bg-offwhite-50 lg:px-16">
-        <h3 className="text-forestdeep-950 font-bold my-8 z-20 ">Our goals</h3>
+      <div className=" px-4 py-16 bg-lightgreen-50 lg:px-16 my-8">
+        <h3 className="text-forestlight-900 font-bold my-8 z-20 ">Our goals</h3>
         <div className="mb-8 lg:flex space-x-8 z-20">
-          {goals.map((goal, index) => (
-            <div className="goal mb-8 lg:flex space-1" key={index.writeup}>
+          {goals.map((goal) => (
+            <div className="goal mb-8 lg:flex space-1" key={goal.id}>
               <div className="flex justify-center lg:justify-start">
                 <div
                   className={`lg:${goal.bg} rounded-tl-2xl rounded-tr-lg rounded-bl-lg rounded-br-4xlsvg text-5xl z-20`}
@@ -358,20 +354,49 @@ export default function Landingpage() {
           ))}
         </div>
       </div>
-
-      {/* donate */}
-      <div className="relative bg-forestdeep-950/70  w-full h-48 ">
-        <div
-          className="absolute w-full h-full inset-0 bg-cover opacity-3"
-          style={{ backgroundImage: `url(${heroSvg})` }}
-        ></div>
-        <div className=" relative z-10 p-4 md:p-8 lg:px:16 writeup w-full h-full md:flex items-center justify-center space-x-4 ">
-          <h3 className="text-white header_text">
-            Make a gift to protect Africa's most vulnerable species
+      {/* sub initiative programs */}
+      <div className="my-8 px-4 space-x-2 lg:flex lg:px-16">
+        {/* youths */}
+        <div className="w-full lg:w-10/12 ">
+          <h3 className="text font-bold text-forestlight-900 capitalize header_text">
+            Green generation movement
           </h3>
-          <button className="bg-soillight-200 text-soildeep-950">Donate</button>
+          <p>
+            <span className="italic font-bold">
+              Levitate Africa foundation{" "}
+            </span>
+            partner with other organizations to empower and promote healthy
+            living amongst young people.
+          </p>
+          {/* project */}
+          <div className="lg:flex space-x-2">
+            {projects.map((project, index) => (
+              <div
+                className=" overflow-hidden w-full h-full my-8 hover:shadow-lg transition duration-300"
+                key={index.heading}
+              >
+                <img
+                  src={project.image}
+                  className="w-full h-48 object-cover block"
+                  alt="say no to drugs, sensitize young ones about drugs"
+                />
+                <h3 className="uppercase font-bold">{project.heading}</h3>
+                <p className="mb-8">{project.writeup}</p>
+              </div>
+            ))}
+          </div>
+          {/* see more */}
+          <button className="bg-forestlight-900 text-soillight-200 hover:bg-forestdeep-950 transition duration-300 ">
+            See more projects
+          </button>
+        </div>
+        {/* articles */}
+        <div className="w-2/12 hidden">
+          <h3 className="text-center text-soildeep-950 font-bold">Articles</h3>
         </div>
       </div>
+
+      {/* donate */}
     </div>
   );
 }

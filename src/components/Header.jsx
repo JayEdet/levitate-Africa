@@ -9,11 +9,11 @@ export default function Header() {
     { name: "home", path: "/" },
     { name: "about us", path: "/Aboutus" },
     { name: "project", path: "/Project" },
-    { name: "Contact", path: "/Contact" },
+    /*  { name: "Contact", path: "/Contact" }, */
   ];
 
   return (
-    <div className=" left-0 w-full z-50 overflow-hidden bg-forestdeep-950/50 shadow-md backdrop-blur-md text-white p-4 flex flex-wrap justify-between md:px-8 lg:px-16">
+    <div className="fixed top-0 left-0 w-full z-50 overflow-hidden bg-forestdeep-950/50 shadow-md backdrop-blur-md text-white p-4  flex flex-wrap justify-between md:px-8 lg:px-16 lg:py-0">
       <div className="logo flex items-center w-11/12 lg:w-6/12">
         <h1>LAF</h1>
       </div>

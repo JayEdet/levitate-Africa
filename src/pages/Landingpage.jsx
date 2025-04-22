@@ -41,6 +41,7 @@ import solarProject from "/solar project.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { Link } from "react-router-dom";
 
 export default function Landingpage() {
   /* state for HERO SECTION transition */
@@ -57,18 +58,21 @@ export default function Landingpage() {
       image: groupRhino,
       description: "Saving species through food",
       writeup: "The nutritional challenges of feeding endangered species",
+      link: "https://www.worldwildlife.org/blogs/sustainability-works/posts/saving-species-through-food-lessons-from-naturnutre-s-ition",
     },
     {
       image: babyCheetah,
       description: "Treating sick animals",
       writeup:
         "The benefits of treating animals to prevent the spread of diseases in the wild",
+      link: "https://cheetah.org/ccf-blog/research/gi-problems-in-cheetahs-take-a-punch-from-probiotics/",
     },
     {
       image: ivory,
       description: "Lampooning poaching activities",
       writeup:
         "Wildlife are trafficked much like illegal drugs and firearms across continents",
+      link: "https://medium.com/@Johnsonedet/animals-are-dying-in-their-numbers-145ea5d34b40",
     },
   ];
   /* swiper images */
@@ -125,7 +129,7 @@ export default function Landingpage() {
   ];
   return (
     <div className="w-full overflow-hidden">
-      <div className="hero relative w-full h-94 lg:screen">
+      <div className="h-screen hero relative w-full md:h-94">
         {/* Image */}
         <img
           src={heroImage}
@@ -153,7 +157,7 @@ export default function Landingpage() {
       </div>
       {/* about us */}
       <div className="about flex justify-center  items-center px-4 py-16 md:px-8 lg:px-16 lg:py-8 bg-offwhite-50">
-        <div className="writeup flex flex-col items-center space-y-2">
+        <div className="writeup flex flex-col items-center space-y-2 lg:w-10/12">
           <p className="text-center">
             <span className="font-bold italic text-forestdeep-950">
               Levitate Africa Foundation
@@ -164,15 +168,19 @@ export default function Landingpage() {
             our planet. We also conduct and sponsor sub-initiative programs
             aimed at empowering youths in Africa.
           </p>
-          <button className="button bg-forestlight-900 text-soillight-200 hover:bg-forestdeep-950 transition duration-300 hover:scale-100 backdrop-blur-sm ">
-            See our vision
-          </button>
+
+          <Link
+            to="/Vision"
+            className="rounded-md bg-forestlight-900 text-soillight-200 hover:bg-forestdeep-950 transition duration-300 hover:scale-100 backdrop-blur-sm"
+          >
+            <button className="">See our vision</button>
+          </Link>
         </div>
       </div>
       {/* approach */}
       <div className="approach flex flex-col space-x-4 p-4 md:p-8 lg:p-16 lg:flex-row ">
         <div className="writeup">
-          <h3 className="text-soildeep-950 headline_text">Our approach</h3>
+          <h3 className="text-soildeep-950 header_text">Our approach</h3>
           <p>
             We help people living in rural communities to safely coexist with
             wildlife and prosper from conservation, instead of killing them for
@@ -191,24 +199,26 @@ export default function Landingpage() {
       </div>
       {/*LAF IN ACTION */}
       <div className="px-4 md:p-8 lg:p-16 bg-gray-100">
-        <h3 className="headline_text text-forestdeep-950">
-          Our work in action
-        </h3>
+        <h3 className="header_text text-forestdeep-950">Our work in action</h3>
         {/* our work */}
-        <div className="lg:flex space-x-8 ">
+        <div className="lg:flex space-x-4 ">
           {cards.map((card) => (
-            <div
-              key={card.writeup}
-              className="w-full flex flex-col space-y-1 mt-4 overflow-hidden hover:scale-105 transition duration-300"
-            >
-              <img
-                src={card.image}
-                alt=""
-                className="w-full h-52 object-cover"
-              />
-              <h3 className="header_text">{card.description}</h3>
-              <p>{card.writeup}</p>
-            </div>
+            <a href={card.link}>
+              <div
+                key={card.writeup}
+                className="w-full flex flex-col space-y-1 mt-4 overflow-hidden hover:scale-105 transition duration-300"
+              >
+                <a href={card.link}>
+                  <img
+                    src={card.image}
+                    alt=""
+                    className="w-full h-64 object-cover"
+                  />
+                  <h3 className="header_text">{card.description}</h3>
+                  <p>{card.writeup}</p>
+                </a>
+              </div>
+            </a>
           ))}
         </div>
       </div>
@@ -268,9 +278,9 @@ export default function Landingpage() {
         className="w-full p-4 h-screen bg-fixed bg-no-repeat bg-cover object-fit bg-bottom transition duration-300 flex items-center md:p-8 lg:px-16"
         style={{ backgroundImage: `url(${deadElephant})` }}
       >
-        <div className="writeup w-full md:w-8/12 ">
+        <div className="writeup w-full md:w-6/12 ">
           <h3 className="text-soillight-200 header_text">
-            Most times Humans view the world too much front an anthropocentric
+            Most times, humans view the world too much front an anthropocentric
             standpoint, we forget that animals feel as much pain as we do, and
             breathe the same air we breathe.
           </h3>
@@ -307,18 +317,20 @@ export default function Landingpage() {
           backgroundImage: `url(${biodiversity})`,
         }}
       >
-        <div className="bg-gray-100 p-8 flex flex-col space-y-1 w-94">
-          <span className="w-10 h-0.5 bg-forestlight-900 flex justify-start items-end "></span>
-          <div className="flex items-center space-x-1">
-            <h3 className="header_text ">Why biodiversity matters</h3>
-            <span className="w-16 h-full flex items-end">
-              <HiChevronRight className="text-2xl text-forestlight-900 mt-1" />
-            </span>
+        <a href="https://www.worldwildlife.org/pages/what-is-biodiversity">
+          <div className="bg-gray-100 p-8 flex flex-col space-y-1 w-94">
+            <span className="w-10 h-0.5 bg-forestlight-900 flex justify-start items-end "></span>
+            <div className="flex items-center space-x-1">
+              <h3 className="header_text ">Why biodiversity matters</h3>
+              <span className="w-16 h-full flex items-end">
+                <HiChevronRight className="text-2xl text-forestlight-900 mt-1" />
+              </span>
+            </div>
+            <p>
+              A world without biodiversity is a weaker, and more fragile world
+            </p>
           </div>
-          <p>
-            A world without biodiversity is a weaker, and more fragile world
-          </p>
-        </div>
+        </a>
       </div>
       {/* support  */}
       <div className="p-0 md:flex md:px-16">
@@ -341,10 +353,10 @@ export default function Landingpage() {
         <h3 className="text-forestlight-900 font-bold my-8 z-20 ">Our goals</h3>
         <div className="mb-8 lg:flex space-x-8 z-20">
           {goals.map((goal) => (
-            <div className="goal mb-8 lg:flex space-1" key={goal.id}>
+            <div className="goal mb-8 lg:flex space-4" key={goal.id}>
               <div className="flex justify-center lg:justify-start">
                 <div
-                  className={`lg:${goal.bg} rounded-tl-2xl rounded-tr-lg rounded-bl-lg rounded-br-4xlsvg text-5xl z-20`}
+                  className={`lg:${goal.bg} rounded-tl-2xl rounded-tr-lg rounded-bl-lg rounded-br-4xl text-5xl z-20`}
                 >
                   {goal.svgIcon}
                 </div>
@@ -386,9 +398,11 @@ export default function Landingpage() {
             ))}
           </div>
           {/* see more */}
-          <button className="bg-forestlight-900 text-soillight-200 hover:bg-forestdeep-950 transition duration-300 ">
-            See more projects
-          </button>
+          <Link to="/Project">
+            <button className="bg-forestlight-900 text-soillight-200 hover:bg-forestdeep-950 transition duration-300 ">
+              See more projects
+            </button>
+          </Link>
         </div>
         {/* articles */}
         <div className="w-2/12 hidden">

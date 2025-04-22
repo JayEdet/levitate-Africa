@@ -20,7 +20,7 @@ export default function Project() {
   ];
   return (
     <>
-      <div className="p-24 space-y-8">
+      <div className="px-4 py-16 md:px-8 lg:p-24 space-y-8">
         <h3 className="headline_text text-forestdeep-950">
           LAF's commitment to local communities and indigenous people
         </h3>
@@ -45,7 +45,7 @@ export default function Project() {
           <h3 className="header_text text-forestdeep-950 mt-16">
             Sub initiative programs
           </h3>
-          <p>
+          <p className="">
             We empower and sensitize young people, nudging them towards goals
             and aspirations. We encourage and support young people to live a
             life of purpose and healthy ambitions{" "}

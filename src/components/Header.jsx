@@ -14,8 +14,10 @@ export default function Header() {
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 overflow-hidden bg-forestdeep-950/50 shadow-md backdrop-blur-md text-white p-4  flex flex-wrap justify-between md:px-8 lg:px-16 lg:py-0">
-      <div className="logo flex items-center w-11/12 lg:w-6/12">
-        <h1>LAF</h1>
+      <div className="logo flex items-center w-11/12 lg:w-7/12">
+        <h1 className="italic headline_text text-soillight-200">
+          Levitate Africa
+        </h1>
       </div>
 
       <div className="w-1/12 lg:hidden">
@@ -23,7 +25,7 @@ export default function Header() {
       </div>
 
       <div
-        className={`links lg:w-6/12 lg:flex lg:items-center lg:justify-between ${
+        className={`links lg:w-5/12 lg:flex lg:items-center lg:justify-between ${
           show ? "block" : "hidden"
         }`}
       >

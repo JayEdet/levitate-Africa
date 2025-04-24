@@ -295,18 +295,21 @@ export default function Landingpage() {
             className="w-full h-full object-cover hover:scale-110 transition duration-300"
           />
         </div>
-        <div className="relative writup rounded-tl-[50px] overflow-hidden lg:py-24 space-y-4 lg:w-6/12 ">
+        <div className="relative writup rounded-tl-[50px] overflow-hidden lg:py-24 space-y-4 lg:w-6/12 z-10 ">
           <div
-            className="absolute inset-0 bg-repeat opacity-8 pointer-events-none"
+            className="absolute inset-0 bg-repeat opacity-5 pointer-events-none z-0"
             style={{ backgroundImage: `url(${heroSvg})` }}
           ></div>
-          <h3 className="header_text mt-4 z-10 text-center lg:text-start lg:w-96 ">
-            What have you done for nature? join our eco-restoration movement
-          </h3>
-          <div className="flex justify-center lg:justify-start z-10">
-            <button className="button bg-forestlight-900 text-soillight-200 hover:bg-forestdeep-950 hover:text-white transition duration-300">
-              Join us
-            </button>
+          <div className="relative z-20 w-full h-full">
+            <h3 className="header_text mt-4 p-8  sm:text-center lg:text-start">
+              What have you done for nature? <br />
+              join our eco-restoration movement
+            </h3>
+            <div className="flex justify-center lg:justify-start z-10 px-8">
+              <button className="button bg-forestlight-900 text-soillight-200 hover:bg-forestdeep-950 hover:text-white transition duration-300">
+                Join us
+              </button>
+            </div>
           </div>
         </div>
       </div>

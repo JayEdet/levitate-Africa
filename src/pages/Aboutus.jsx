@@ -8,7 +8,7 @@ export default function Aboutus() {
     <div>
       {/* hero */}
       <div
-        className="relative hero w-full h-screen bg-top  bg-no-repeat lg:bg-cover"
+        className="relative hero w-full h-screen bg-top bg-cover  bg-no-repeat lg:bg-cover"
         style={{ backgroundImage: `url(${lionCub})` }}
       >
         <div className="absolute w-full h-full inset-0 bg-black/50 md:bg-black/30"></div>

@@ -1,7 +1,6 @@
 import womanElephant from "/elephant smiling.jpg";
 import mammoth from "/mammoth.jpg";
 import heroSvg from "/hero pattern.png";
-import macque from "/macque monkey.jpg";
 const Vision = () => {
   return (
     <div>

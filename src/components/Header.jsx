@@ -13,9 +13,9 @@ export default function Header() {
   ];
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 overflow-hidden bg-forestdeep-950/50 shadow-md backdrop-blur-md text-white p-4  flex flex-wrap justify-between md:px-8 lg:px-16 lg:py-0">
+    <div className="w-full z-50 overflow-hidden fixed left-0 top-0 bg-forestdeep-950/80 shadow-md backdrop-blur-md text-white px-4 py-2 flex flex-wrap justify-between lg:px-16">
       <div className="logo flex items-center w-11/12 lg:w-7/12">
-        <h1 className="italic headline_text text-soillight-200">
+        <h1 className="italic header_text text-soillight-200">
           Levitate Africa
         </h1>
       </div>

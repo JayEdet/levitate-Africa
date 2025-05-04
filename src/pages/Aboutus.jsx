@@ -3,23 +3,46 @@ import lionCub from "/white lion.jpg";
 import treePlanting from "/tree planting.png";
 import heroSvg from "/hero pattern.png";
 import safari from "/safari.jpg";
+import grivetMonkey from "/grivet monkey.jpg";
+import { useEffect, useState } from "react";
+
+/* animation */
+import { motion } from "motion/react";
+import {
+  textVariant,
+  containerVariants,
+  itemVariants,
+  reverseTextVariant,
+  scaleUp,
+} from "../animation";
+
 export default function Aboutus() {
   return (
     <div>
       {/* hero */}
       <div
         className="relative hero w-full h-screen bg-top bg-cover  bg-no-repeat lg:bg-cover"
-        style={{ backgroundImage: `url(${lionCub})` }}
+        style={{
+          backgroundImage: `url(${lionCub})`,
+        }}
       >
-        <div className="absolute w-full h-full inset-0 bg-black/50 md:bg-black/30"></div>
-        <div className="relative writeup w-full h-full z-20 flex flex-col justify-center px-4 md:px-8 lg:px-16">
-          <h3 className="font-headline text-offwhite-50 headline_text">
+        <div className="absolute w-full h-full inset-0 bg-black/50 md:bg-black/60"></div>
+        <motion.div
+          className="relative writeup w-full h-full z-20 flex flex-col justify-center px-4 md:px-8 lg:px-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+        >
+          <motion.h3
+            className="font-headline text-soillight-200 headline_text"
+            variants={itemVariants}
+          >
             Wildlife matter
-          </h3>
-          <p className="text-white">
+          </motion.h3>
+          <motion.p className="text-white" variants={itemVariants}>
             Together, we can protect and preserve them from going extinct
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </div>
       {/* quote by Desmond Tutu */}
       <div className="p-4 md:w-8/12 text-center md:p-8 mx-auto lg:p-16">
@@ -31,7 +54,14 @@ export default function Aboutus() {
       </div>
       {/* ABOUT */}
       <div className="p-4 bg-lightgreen-50 md:p-8 lg:p-16 ">
-        <h3 className="text-soildeep-950 header_text">ABOUT LEVITATE AFRICA</h3>
+        <motion.h3
+          className="text-soildeep-950 header_text"
+          variants={textVariant}
+          initial="hidden"
+          whileInView="show"
+        >
+          ABOUT LEVITATE AFRICA
+        </motion.h3>
         <p>
           levitate Africa is a non profit organization that create awareness
           about the dangers of poaching wildlife. We partner with like-minded
@@ -73,11 +103,16 @@ export default function Aboutus() {
         </div>
       </div>
       {/* preserve wildlife */}
-      <div className="preserve md:flex space-x-8">
+      <div className="preserve md:flex space-x-8 my-16">
         <div className="md:w-5/12">
-          <h3 className="p-4 header_text text-soildeep-950 md:p-8 lg:p-16">
+          <motion.h3
+            className="p-4 header_text text-soildeep-950 md:p-8 lg:p-16"
+            variants={textVariant}
+            initial="hidden"
+            whileInView="show"
+          >
             We conserve wildlife and wild places
-          </h3>
+          </motion.h3>
         </div>
         <div className="image md:w-7/12">
           <img src={safari} alt="" />

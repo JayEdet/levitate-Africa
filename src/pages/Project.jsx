@@ -2,6 +2,17 @@
 import indigen from "/indigenous people.png";
 import schoolOutreach from "/school outreach.jpg";
 import solarProject from "/solar project.png";
+
+/* framer animation */
+import { motion } from "motion/react";
+import {
+  textVariant,
+  containerVariants,
+  itemVariants,
+  reverseTextVariant,
+  scaleUp,
+} from "../animation";
+
 export default function Project() {
   /* projects */
   const projects = [
@@ -21,11 +32,11 @@ export default function Project() {
   return (
     <>
       <div className="px-4 py-16 md:px-8 lg:p-24 space-y-8">
-        <h3 className="headline_text text-forestdeep-950">
+        <h3 className="headline_text header_text text-forestdeep-950">
           LAF's commitment to local communities and indigenous people
         </h3>
-        <div className="">
-          <img src={indigen} className="" alt="planting trees" />
+        <div className="md:w-8/12 mx-auto">
+          <img src={indigen} className="w-full" alt="planting trees" />
         </div>
         <div className="writeup">
           <p>
@@ -45,16 +56,22 @@ export default function Project() {
           <h3 className="header_text text-forestdeep-950 mt-16">
             Sub initiative programs
           </h3>
-          <p className="">
+          <p className="mb-8">
             We empower and sensitize young people, nudging them towards goals
             and aspirations. We encourage and support young people to live a
             life of purpose and healthy ambitions{" "}
           </p>
 
-          <div className="md:flex space-x-8">
+          <motion.div
+            className="md:flex space-x-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+          >
             {projects.map((project, index) => (
-              <div
+              <motion.div
                 className="pb-8 hover:shadow-lg transition duration-300"
+                variants={itemVariants}
                 key={index.writeup}
               >
                 <img src={project.image} className="w-full h-64" alt="" />
@@ -62,9 +79,9 @@ export default function Project() {
                   {project.heading}
                 </h3>
                 <p>{project.writeup}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </>

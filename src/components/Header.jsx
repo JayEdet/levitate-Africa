@@ -43,7 +43,7 @@ export default function Header() {
           </ul>
         ))}
         <button className="button bg-soillight-200 text-soildeep-950">
-          Donate
+          <a href="https://wildimpact.earth/donate/">Donate</a>
         </button>
       </div>
     </div>

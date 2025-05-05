@@ -364,7 +364,9 @@ export default function Landingpage() {
             </h3>
             <div className="flex justify-center lg:justify-start z-10 px-8">
               <button className="button bg-forestlight-900 text-soillight-200 hover:bg-forestdeep-950 hover:text-white transition duration-300">
-                Join us
+                <a href="https://wildimpact.earth/conserving-ecosystems/">
+                  Join us
+                </a>
               </button>
             </div>
           </div>
@@ -566,7 +568,9 @@ export default function Landingpage() {
               Africa to restore balance in our ecosystem and preserve wildlife.
             </motion.h3>
             <button className="my-8 button bg-forestlight-900 text-soillight-200 hover:bg-forestdeep-950 hover:text-white transition duration-300">
-              Join us
+              <a href="https://wildimpact.earth/conserving-ecosystems/">
+                Join us
+              </a>
             </button>
           </div>
         </div>

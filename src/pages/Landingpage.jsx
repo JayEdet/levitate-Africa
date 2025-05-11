@@ -72,7 +72,6 @@ export default function Landingpage() {
   }, []);
 
   /* state for G-news api */
-
   const [news, setNews] = useState([]);
   useEffect(() => {
     const fetchNews = async () => {
@@ -175,9 +174,11 @@ export default function Landingpage() {
         {/* Video */}
         <video
           className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ease-in-out ${
-            showVideo ? "opacity-100 z-0" : "opacity-0"
+            showVideo ? "opacity-100 z-10" : "display-none"
           }`}
           autoPlay
+          poster={heroImage}
+          preload="auto"
           muted
           loop
           playsInline
@@ -323,7 +324,10 @@ export default function Landingpage() {
       {/* Humans view */}
       <div
         className="w-full p-4 h-screen bg-fixed bg-no-repeat bg-cover object-fit bg-bottom transition duration-300 flex items-center md:p-8 lg:px-16"
-        style={{ backgroundImage: `url(${deadElephant})` }}
+        style={{
+          backgroundImage: `url(${deadElephant})`,
+          backgroundPosition: "center",
+        }}
       >
         <div className="writeup w-full md:w-6/12 ">
           <motion.h3
